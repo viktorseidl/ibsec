@@ -10,7 +10,7 @@ const Test = () => {
     localStorage.setItem('theme', true);
   } 
   useEffect(()=>{
-    localStorage.setItem('theme','true')
+    localStorage.setItem('theme','false')
   },[])
   return (
     <div className=' w-full h-screen dark:bg-slate-950  bg-stone-200 py-20'>

@@ -32,7 +32,7 @@ export default {
         'dark-body-text': '#d1d5db',      // Soft Light Green for Body Text
         'dark-accent': '#84cc16',         // Light Blue-Green for Accents
         'dark-secondary-text': '#6b7280', // Muted Aqua for Secondary Text
-        'dark-background': '#020617',     // Dark Slate Blue for Background
+        'dark-background': '#1c1917',     // Dark Slate Blue for Background
       },
       screens: {
         'md': { 'raw': '(min-width: 1430px)' },
