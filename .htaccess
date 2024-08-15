@@ -1,0 +1,29 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteCond %{HTTPS} !=on
+  RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+  RewriteBase /
+  
+ # Handle subfolder1 requests
+ # RewriteCond %{RE# QUEST_URI} ^/messagecenter [NC]
+ # RewriteCond %{REQUEST_FILENAME} !-f
+ # RewriteCond %{REQUEST_FILENAME} !-d
+ # RewriteCond %{REQUEST_FILENAME} !-l
+ # RewriteRule ^messagecenter/(.*)$ /messagecenter/index.html [L] 
+  
+ # Handle subfolder2 requests
+ # RewriteCond %{REQUEST_URI} ^/administration [NC]
+ # RewriteCond %{REQUEST_FILENAME} !-f
+ # RewriteCond %{REQUEST_FILENAME} !-d
+ # RewriteCond %{REQUEST_FILENAME} !-l
+ # RewriteRule ^administration/(.*)$ /administration/index.html [L] 
+  
+  
+  # Default rewrite rule for other requests
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_FILENAME} !-l
+  RewriteCond %{REQUEST_URI} !^/messagecenter [NC] 
+  RewriteCond %{REQUEST_URI} !^/administration [NC] 
+  RewriteRule . /index.html [L]
+  </IfModule>
