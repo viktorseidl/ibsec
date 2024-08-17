@@ -45,8 +45,8 @@ const NavigationNotLogged = (props) => {
     <div className='cursor-pointer linkFont text-lg p-2 dark:text-white dark:hover:text-orange-500 hover:text-blue-700 text-slate-950 ml-10'>Docs</div>
     </div>
     <div  className='w-full col-span-4 flex flex-row items-end justify-end dark:text-white text-slate-950'>
-      <div onClick={()=>changeMode(!themeMode)} className='text-2xl mr-8'>{themeMode?<MdDarkMode />:<MdSunny />}</div>
-      <div className='flex flex-row items-center justify-center'>
+      <div onClick={()=>changeMode(!themeMode)} className='text-2xl mr-8 cursor-pointer'>{themeMode?<MdDarkMode />:<MdSunny />}</div>
+      <div className='flex flex-row items-center justify-center cursor-pointer'>
         <Sprachen /><a className='ml-2'>Sprachen DE</a>
       </div>
     </div>

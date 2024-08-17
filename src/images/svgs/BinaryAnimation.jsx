@@ -14,8 +14,8 @@ const BinaryAnimation = () => {
       const canvas = canvasRef.current;
       const ctx = canvas.getContext('2d');
   
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
+      canvas.width = canvasRef.current.width*2.3;
+      canvas.height = canvasRef.current.height*2.3;
   
       const columns = Math.floor(canvas.width / 15); // More particles by reducing the column width
       const binaryArray = Array(columns).fill(1);
@@ -83,7 +83,7 @@ const BinaryAnimation = () => {
       };
     }, []);
   
-    return <canvas className='w-full inline-block ' ref={canvasRef} />;
+    return <canvas className='w-full h-[600px] inline-block ' ref={canvasRef} />;
   };
 
 export default BinaryAnimation;
