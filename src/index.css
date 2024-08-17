@@ -14,4 +14,31 @@
   font-family: Orbitron;
   src: url("fonts/Orbitron-VariableFont_wght.ttf");
 }
+@font-face {
+  font-family: Montserrat;
+  src: url("fonts/Montserrat-VariableFont_wght.ttf");
+}
+@font-face {
+  font-family: Michroma;
+  src: url("fonts/Michroma-Regular.ttf");
+}
+@font-face {
+  font-family: Exo;
+  src: url("fonts/Exo2-VariableFont_wght.ttf");
+}
+@font-face {
+  font-family: Audiowide;
+  src: url("fonts/Audiowide-Regular.ttf");
+}
+@font-face {
+  font-family: Inter;
+  src: url("fonts/Inter-VariableFont_opsz\,wght.ttf");
+}
+
+.logoFont{
+  font-family: Exo;
+}
+.linkFont{
+  font-family: Inter;
+}
  

@@ -30,11 +30,12 @@ function App() {
 
 
   return (
-    <div className='w-full min-h-screen dark:bg-dark-background bg-light-background-color'>
+    <div className='w-full flex flex-col items-center justify-start min-h-screen dark:bg-dark-background bg-light-background-color'>
+      
       <NavigationNotLogged />
     <Router basename='/'>   
     <Pages />
-    </Router>
+    </Router> 
     </div> 
   )
 }
