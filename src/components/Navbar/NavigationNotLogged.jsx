@@ -29,8 +29,7 @@ const NavigationNotLogged = (props) => {
 
     }
     useEffect(()=>{
-        setthemeMode(localStorage.getItem('theme')==='false'?false:true) 
-        localStorage.setItem('theme', false);
+        setthemeMode(localStorage.getItem('theme')==='false'?false:true)  
     },[])
   return (
     <nav className="md:w-5/6 lgo:w-full osm:w-full w-full fixed z-10 top-0 left-1/6 h-auto grid grid-cols-12 gap-2 items-center justify-items-center dark:bg-stone-800 bg-white/50 md:py-4 lgo:py-4 osm:py-4 py-0 px-8"> 
