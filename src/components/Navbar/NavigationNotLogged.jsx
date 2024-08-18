@@ -8,7 +8,7 @@ import Sprachen from '../../images/svgs/Sprachen'
 
 const NavigationNotLogged = (props) => {
     const [themeMode,setthemeMode]=useState()
-    const [menuChanger,setmenuChanger]=useState(false)
+    const [langChangerDESK,setlangChangerDESK]=useState(false)
     if (localStorage.getItem('theme') === 'false' || (!(localStorage.getItem('theme')))) {
         document.documentElement.classList.add('dark')
         localStorage.setItem('theme', false); 
@@ -28,11 +28,16 @@ const NavigationNotLogged = (props) => {
           } 
 
     }
+    const changeLanguage=(T)=>{
+      localStorage.setItem('language', T);
+      window.location.reload() 
+    }
     useEffect(()=>{
-        setthemeMode(localStorage.getItem('theme')==='false'?false:true)  
+        setthemeMode(localStorage.getItem('theme')==='false'?false:true) 
+          
     },[])
   return (
-    <nav className="md:w-5/6 lgo:w-full osm:w-full w-full fixed z-10 top-0 left-1/6 h-auto grid grid-cols-12 gap-2 items-center justify-items-center dark:bg-stone-800 bg-white/50 md:py-4 lgo:py-4 osm:py-4 py-0 px-8"> 
+    <nav className="md:w-5/6 lgo:w-full osm:w-full w-full fixed z-10 top-0 left-1/6 h-auto grid grid-cols-12 gap-2 items-center justify-items-center dark:bg-stone-800 bg-white/90 md:py-4 lgo:py-4 osm:py-4 py-0 px-8"> 
     <div className=' relative w-full'>
       <div className='w-3/6 '>
         <IBlogo />
@@ -46,8 +51,29 @@ const NavigationNotLogged = (props) => {
     </div>
     <div  className='w-full col-span-4 flex flex-row items-end justify-end dark:text-white text-slate-950'>
       <div onClick={()=>changeMode(!themeMode)} className='text-2xl mr-8 cursor-pointer'>{themeMode?<MdDarkMode />:<MdSunny />}</div>
-      <div className='flex flex-row items-center justify-center cursor-pointer'>
+      <div onClick={()=>setlangChangerDESK(!langChangerDESK)} className='relative group flex flex-row items-center justify-center cursor-pointer'>
         <Sprachen /><a className='ml-2'>Sprachen DE</a>
+        {
+          langChangerDESK?
+        <span className='w-[140%] absolute inset top-10 -right-0  dark:bg-stone-900 bg-white  rounded ring-1 dark:ring-stone-700 ring-gray-400'>
+            <span className='w-full divide-y divide-stone-800 flex flex-col items-start justify-start p-2'>
+          
+            <span onClick={()=>changeLanguage('DE')} className='w-full flex flex-col items-start justify-start px-4 py-2 dark:hover:bg-white/10 hover:bg-slate-500/10'>
+              <a className='dark:text-orange-700 text-blue-700'>Deutsch</a>
+              <a>DEUTSCH (DE)</a>
+            </span>
+            <span onClick={()=>changeLanguage('EN')} className='w-full flex flex-col items-start justify-start px-4 py-2 dark:hover:bg-white/10 hover:bg-slate-500/10'>
+              <a className='dark:text-orange-700 text-blue-700'>Englisch</a>
+              <a>ENGLISCH (EN)</a>
+            </span>
+            <span  onClick={()=>changeLanguage('ES')} className='w-full flex flex-col items-start justify-start px-4 py-2 dark:hover:bg-white/10 hover:bg-slate-500/10'>
+              <a className='dark:text-orange-700 text-blue-700'>Spanisch</a>
+              <a>SPANISCH (ES)</a>
+            </span>
+            </span>
+        </span>:
+        ''
+        }
       </div>
     </div>
       </nav>
