@@ -37,7 +37,7 @@ const NavigationNotLogged = (props) => {
           
     },[])
   return (
-    <nav className="md:w-5/6 lgo:w-full osm:w-full w-full fixed z-10 top-0 left-1/6 h-auto grid grid-cols-12 gap-2 items-center justify-items-center dark:bg-stone-800 bg-white/90 md:py-4 lgo:py-4 osm:py-4 py-0 px-8"> 
+    <nav className="md:w-5/6 lgo:w-full osm:w-full w-full fixed z-10 top-0 left-1/6 h-auto grid grid-cols-12 gap-2 items-center justify-items-center dark:bg-stone-800 bg-white/90 border-x border-b dark:border-gray-600 border-gray-400 md:py-4 lgo:py-4 osm:py-4 py-0 px-8"> 
     <div className=' relative w-full'>
       <div className='w-3/6 '>
         <IBlogo />
