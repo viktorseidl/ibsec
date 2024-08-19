@@ -37,7 +37,7 @@ const NavigationNotLogged = (props) => {
           
     },[])
   return (
-    <nav className="md:w-5/6 lgo:w-full osm:w-full w-full fixed z-10 top-0 left-1/6 h-auto grid grid-cols-12 gap-2 items-center justify-items-center dark:bg-stone-800 bg-white/90 border-x border-b dark:border-gray-600 border-gray-400 md:py-4 lgo:py-4 osm:py-4 py-0 px-8"> 
+    <nav className="md:w-5/6 lgo:w-full osm:w-full w-full fixed z-10 top-0 left-1/6 h-auto grid grid-cols-12 gap-2 items-center justify-items-center dark:bg-stone-800 bg-white border-x border-b dark:border-gray-600 border-gray-400 md:py-4 lgo:py-4 osm:py-4 py-0 px-8"> 
     <Link className='w-full' target='_parent' to={"/"}>
     <div className=' relative w-full'>
       <div className='w-3/6 '>
@@ -46,9 +46,9 @@ const NavigationNotLogged = (props) => {
     </div>
     </Link>
     <div className='w-full col-span-7 flex flex-row items-start justify-start'>
-    <div className='cursor-pointer linkFont text-lg p-2 dark:text-white dark:hover:text-orange-500 hover:text-blue-700 text-slate-950 first:ml-0'><Link target='_parent' to={"/#about"}>About</Link></div>
+    <div className='cursor-pointer linkFont text-lg p-2 dark:text-white dark:hover:text-orange-500 hover:text-blue-700 text-slate-950 first:ml-0'><Link target='_parent' to={"/#about"}>Über Uns</Link></div>
     <div className='cursor-pointer linkFont text-lg p-2 dark:text-white dark:hover:text-orange-500 hover:text-blue-700 text-slate-950 ml-10'><Link target='_parent' to={"/#mission"}>Mission</Link></div>
-    <div className='cursor-pointer linkFont text-lg p-2 dark:text-white dark:hover:text-orange-500 hover:text-blue-700 text-slate-950 ml-10'><Link target='_parent' to={"/#pricing"}>Pricing</Link></div>
+    <div className='cursor-pointer linkFont text-lg p-2 dark:text-white dark:hover:text-orange-500 hover:text-blue-700 text-slate-950 ml-10'><Link target='_parent' to={"/#pricing"}>Preise</Link></div>
     <div className='cursor-pointer linkFont text-lg p-2 dark:text-white dark:hover:text-orange-500 hover:text-blue-700 text-slate-950 ml-10'><Link target='_parent' to={"/#docs"}>Docs</Link></div>
     </div>
     <div  className='w-full col-span-4 flex flex-row items-end justify-end dark:text-white text-slate-950'>
