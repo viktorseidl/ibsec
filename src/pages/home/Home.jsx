@@ -19,19 +19,19 @@ const Home = () => {
                 <div className='text-center font-bold Exo text-4xl'>
                   <CountUp end={1476} duration={5} />
                 </div>
-                <div className='w-full border-t dark:border-white/40 border-[#1e293b] pt-4 uppercase text-center'>User Accounts</div>
+                <div className='w-full border-t dark:border-white/40 border-[#1e293b] pt-4 uppercase text-center'>Anwender</div>
               </div>
               <div className='w-5/6 flex flex-col items-center justify-center gap-4'>
               <div className='text-center font-bold Exo text-4xl'>
-              <CountUp end={123000000} duration={5} />
+              <CountUp end={123000000} duration={5} /> $
               </div>
-              <div className='w-full border-t dark:border-white/40 border-[#1e293b] pt-4 uppercase text-center'>Money generated</div>
+              <div className='w-full border-t dark:border-white/40 border-[#1e293b] pt-4 uppercase text-center'>Generierte Einnahmen</div>
               </div>
               <div className='w-5/6 flex flex-col items-center justify-center gap-4'>
               <div className='text-center font-bold Exo text-4xl'>
               <CountUp end={417899} duration={5} />
               </div>
-              <div className='w-full border-t dark:border-white/40 border-[#1e293b] pt-4 uppercase text-center'>Daily Data-Requests</div>
+              <div className='w-full border-t dark:border-white/40 border-[#1e293b] pt-4 uppercase text-center'>Daten-Abfragen</div>
               </div>
             </div>
           </div>
