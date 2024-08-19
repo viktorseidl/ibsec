@@ -14,13 +14,14 @@ const BinaryAnimation = () => {
       const canvas = canvasRef.current;
       const ctx = canvas.getContext('2d');
   
-      canvas.width = canvasRef.current.width*2.3;
-      canvas.height = canvasRef.current.height*2.3;
+      canvas.width = canvasRef.current.width*4.3;
+      canvas.height = canvasRef.current.height*4.3;
   
       const columns = Math.floor(canvas.width / 15); // More particles by reducing the column width
       const binaryArray = Array(columns).fill(1);
   
       const drawBinary = () => {
+        
         ctx.fillStyle = mode?'rgba(190,190,190,0.8)':'rgba(12,10,9,0.8)';
         ctx.fillRect(0, 0, canvas.width, canvas.height);
   
@@ -56,11 +57,11 @@ const BinaryAnimation = () => {
   
         // Draw IntelliBlock-Secure Text with stroke
         ctx.font = '10rem "Orbitron", Courier, monospace'; 
-        ctx.strokeStyle = mode?'#020617':'#FFFFFF';
+        ctx.strokeStyle = mode?'#000000':'#FFFFFF';
         ctx.lineWidth = 8;
         ctx.strokeText('IB-SECURE', canvas.width / 2, canvas.height / 2);
         ctx.font = '5rem "Orbitron", Courier, monospace'; 
-        ctx.strokeStyle = mode?'#1e293b':'#888888';
+        ctx.strokeStyle = mode?'#1e293b':'#ea580c';
         ctx.lineWidth = 8;
         ctx.strokeText('PERSONAL DATA SECURITY', canvas.width / 2, canvas.height / 1.4);
   
@@ -69,18 +70,18 @@ const BinaryAnimation = () => {
   
       drawBinary();
   
-      const handleResize = () => {
+      const handleResize = () => {  
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
-        binaryArray.fill(1);
+        binaryArray.fill(1); 
       };
-  
-      window.addEventListener('resize', handleResize);
+      handleResize()
+      /*window.addEventListener('resize', handleResize);
   
       // Cleanup function to stop the animation and remove event listeners
       return () => {
         window.removeEventListener('resize', handleResize);
-      };
+      };*/
     }, []);
   
     return <canvas className='w-full h-[600px] inline-block ' ref={canvasRef} />;
