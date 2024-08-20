@@ -3,14 +3,16 @@ import React, { useEffect, useRef } from 'react';
 const BinaryAnimation = () => {
     const canvasRef = useRef(null);
      let mode;
-      if(document.documentElement.classList.contains('dark')){
-        mode=false;
-      }else{
-        mode=true;
-      }
+      
 
     useEffect(() => {
-       
+      setInterval(() => {
+        if(document.documentElement.classList.contains('dark')){
+          mode=false;
+        }else{
+          mode=true;
+        }
+      },1000)
       const canvas = canvasRef.current;
       const ctx = canvas.getContext('2d');
   
@@ -54,16 +56,63 @@ const BinaryAnimation = () => {
             binaryArray[i] = 0;
           }
         }
-  
+   
+        const swidth=window.screen.width
+        const sheight=window.screen.height
+        let fsizeone='10rem ';
+        let fsizetwo='5rem ';
+        let lineWidthone=8;
+        let lineWidthtwo=8;
+        let alignWone=2;
+        let alignHone=2;
+        let alignWtwo=2;
+        let alignHtwo=1.4;
+        if(swidth>830 && swidth < 1430){ 
+          fsizeone='8rem ';
+          fsizetwo='4rem ';
+          lineWidthone=8;
+          lineWidthtwo=4;
+          alignWone=2;
+          alignHone=3.5;
+          alignWtwo=2;
+          alignHtwo=2.1;
+        }else if(swidth>530 && swidth < 850 && sheight >1000){ 
+          fsizeone='6em ';
+          fsizetwo='3em ';
+          lineWidthone=6;
+          lineWidthtwo=3;
+          alignWone=2;
+          alignHone=4;
+          alignWtwo=2;
+          alignHtwo=2.4;
+        }else if(swidth<530){ 
+          fsizeone='2.7em ';
+          fsizetwo='1.1rem ';
+          lineWidthone=3;
+          lineWidthtwo=1.5;
+          alignWone=2;
+          alignHone=4.5;
+          alignWtwo=2;
+          alignHtwo=3.2;
+        }else{
+          fsizeone='10rem ';
+          fsizetwo='5rem ';
+          lineWidthone=8;
+          lineWidthtwo=8;
+          alignWone=2;
+          alignHone=3;
+          alignWtwo=2;
+          alignHtwo=1.7;
+        } 
         // Draw IntelliBlock-Secure Text with stroke
-        ctx.font = '10rem "Orbitron", Courier, monospace'; 
+        ctx.font = fsizeone+' "Orbitron", Courier, monospace'; 
         ctx.strokeStyle = mode?'#000000':'#FFFFFF';
-        ctx.lineWidth = 8;
-        ctx.strokeText('IB-SECURE', canvas.width / 2, canvas.height / 2);
-        ctx.font = '5rem "Orbitron", Courier, monospace'; 
+        ctx.lineWidth = lineWidthone;
+        ctx.strokeText('IB-SECURE', canvas.width / alignWone, canvas.height / alignHone);
+        ctx.font = fsizetwo+' "Orbitron", Courier, monospace'; 
         ctx.strokeStyle = mode?'#1e293b':'#ea580c';
-        ctx.lineWidth = 8;
-        ctx.strokeText('PERSONAL DATA SECURITY', canvas.width / 2, canvas.height / 1.4);
+        ctx.lineWidth = lineWidthtwo;
+        ctx.strokeText('PERSONAL DATA SECURITY', canvas.width / alignWtwo, canvas.height / alignHtwo);
   
         requestAnimationFrame(drawBinary);
       };
@@ -75,13 +124,7 @@ const BinaryAnimation = () => {
         canvas.height = window.innerHeight;
         binaryArray.fill(1); 
       };
-      handleResize()
-      /*window.addEventListener('resize', handleResize);
-  
-      // Cleanup function to stop the animation and remove event listeners
-      return () => {
-        window.removeEventListener('resize', handleResize);
-      };*/
+      handleResize() 
     }, []);
   
     return <canvas className='w-full h-[600px] inline-block ' ref={canvasRef} />;
