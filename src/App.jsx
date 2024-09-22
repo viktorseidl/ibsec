@@ -6,8 +6,9 @@ import LogoText from './images/svgs/LogoText';
 import LogoBlocks from './images/svgs/LogoBlocks';
 import NavigationNotLogged from './components/Navbar/NavigationNotLogged';
 import Home from './pages/home/Home';
+import { Lang } from './provider/LanguageProvider';
 function App() { 
-  
+  const[lang,setlang]=useState('DE')
   const Pages=()=>{
     return(
       <Routes>
@@ -27,16 +28,18 @@ function App() {
       </Routes>
     )
   }
-
+ 
 
   return (
+    <Lang.Provider value={lang}>
     <div className='w-full flex flex-col items-center justify-start min-h-screen dark:bg-dark-background bg-light-background-color  scroll-smooth'>
       
     <Router basename='/'>   
-      <NavigationNotLogged />
+      <NavigationNotLogged LSetter={setlang} />
     <Pages />
     </Router> 
     </div> 
+    </Lang.Provider>
   )
 }
 

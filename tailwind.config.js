@@ -19,6 +19,9 @@ export default {
     extend: {
       colors: {
         // Light Theme Colors
+        'light-section-ringColor': '#4b5563',          // Section Ring Color
+        'light-section-BackgroundColor': 'rgb(255 255 255 / 0.9)',          // Section Background Color
+        'light-section-TitleColor': '#4a2758',          // Section Title Color
         'light-title-color': '#57534e',         // Navy Blue for Titles
         'light-subtitle-color': '#78716c',      // Steel Blue for Subtitles
         'light-body-text-color': '#455a64',     // Dark Slate Gray for Body Text
@@ -27,6 +30,9 @@ export default {
         'light-background-color': '#e7e5e4',    // Light Gray for Background
 
         // Dark Theme Colors
+        'dark-section-ringColor': '#4b5563',          // Section Ring Color
+        'dark-section-BackgroundColor': '#0c0a09',          // Section Background Color
+        'dark-section-TitleColor': '#c2410c',          // Section Title Color
         'dark-title': '#7a82af',          // Teal for Titles
         'dark-subtitle': '#595d92',       // Sky Blue for Subtitles
         'dark-body-text': '#d1d5db',      // Soft Light Green for Body Text

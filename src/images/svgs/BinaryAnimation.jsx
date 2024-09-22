@@ -80,11 +80,11 @@ const BinaryAnimation = () => {
           fsizeone='6em ';
           fsizetwo='3em ';
           lineWidthone=6;
-          lineWidthtwo=3;
+          lineWidthtwo=2;
           alignWone=2;
           alignHone=4;
           alignWtwo=2;
-          alignHtwo=2.4;
+          alignHtwo=2.7;
         }else if(swidth<530){ 
           fsizeone='2.7em ';
           fsizetwo='1.1rem ';
