@@ -1,6 +1,6 @@
 import React from 'react'
 import BinaryAnimation from '../../../images/svgs/BinaryAnimation'
-import CountUps from '../../../pages/home/components/CountUps'
+import CountUps from './CountUps'
 
 const IntroAnimation = () => {
   return (

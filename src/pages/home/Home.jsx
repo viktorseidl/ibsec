@@ -3,7 +3,7 @@ import IBlogo from '../../images/logos/IBlogo'
 import IntroAnimation from '../../components/sections/Home/IntroAnimation'
 import ExplainSection from '../../components/sections/Home/ExplainSection'
 import LearnSection from '../../components/sections/Home/LearnSection'
-import { FaFacebook, FaGithub, FaTwitter, FaXing } from "react-icons/fa";
+import { FaGithub, FaTwitter, FaXing } from "react-icons/fa";
 const Home = () => {
   
   return (

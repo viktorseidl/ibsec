@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { MdDarkMode, MdMenu, MdMenuOpen, MdSunny } from 'react-icons/md'
 import LogoBlocks from '../../images/svgs/LogoBlocks'
 import LogoText from '../../images/svgs/LogoText'
@@ -6,10 +6,12 @@ import SidebarNotLogged from './Sidebar/SidebarNotLogged'
 import IBlogo from '../../images/logos/IBlogo'
 import Sprachen from '../../images/svgs/Sprachen'
 import {Link} from 'react-router-dom'
+import { Lang } from '../../provider/LanguageProvider'
 const NavigationNotLogged = (props) => {
     const [MenuMode,setMenuMode]=useState(false)
     const [themeMode,setthemeMode]=useState()
     const [langChangerDESK,setlangChangerDESK]=useState(false)
+    const Lang2=useContext(Lang) 
     if (localStorage.getItem('theme') === 'false' || (!(localStorage.getItem('theme')))) {
         document.documentElement.classList.add('dark')
         localStorage.setItem('theme', false); 
@@ -68,19 +70,19 @@ const NavigationNotLogged = (props) => {
         <span className='w-[140%] absolute inset top-10 -right-0  dark:bg-stone-900 bg-white  rounded ring-1 dark:ring-stone-700 ring-gray-400'>
             <span className='w-full divide-y divide-stone-800 flex flex-col items-start justify-start p-2'>
           
-            <span onClick={()=>changeLanguage('DE')} className='w-full flex flex-col items-start justify-start px-4 py-2 dark:hover:bg-white/10 hover:bg-slate-500/10'>
+            <span onClick={()=>changeLanguage('DE')} className={'w-full flex flex-col items-start justify-start px-4 py-2 dark:hover:bg-white/10 hover:bg-slate-500/10'+(Lang2=="DE"?' bg-blue-500/10 ':'')}>
               <a className='dark:text-orange-700 text-blue-700'>Deutsch</a>
               <a>DEUTSCH (DE)</a>
             </span>
-            <span onClick={()=>changeLanguage('EN')} className='w-full flex flex-col items-start justify-start px-4 py-2 dark:hover:bg-white/10 hover:bg-slate-500/10'>
+            <span onClick={()=>changeLanguage('EN')} className={'w-full flex flex-col items-start justify-start px-4 py-2 dark:hover:bg-white/10 hover:bg-slate-500/10'+(Lang2=="EN"?' bg-blue-500/10 ':'')}>
               <a className='dark:text-orange-700 text-blue-700'>Englisch</a>
               <a>ENGLISCH (EN)</a>
             </span>
-            <span  onClick={()=>changeLanguage('ES')} className='w-full flex flex-col items-start justify-start px-4 py-2 dark:hover:bg-white/10 hover:bg-slate-500/10'>
+            <span  onClick={()=>changeLanguage('ES')} className={'w-full flex flex-col items-start justify-start px-4 py-2 dark:hover:bg-white/10 hover:bg-slate-500/10'+(Lang2=="ES"?' bg-blue-500/10 ':'')}>
               <a className='dark:text-orange-700 text-blue-700'>Spanisch</a>
               <a>SPANISCH (ES)</a>
             </span>
-            <span  onClick={()=>changeLanguage('IT')} className='w-full flex flex-col items-start justify-start px-4 py-2 dark:hover:bg-white/10 hover:bg-slate-500/10'>
+            <span  onClick={()=>changeLanguage('IT')} className={'w-full flex flex-col items-start justify-start px-4 py-2 dark:hover:bg-white/10 hover:bg-slate-500/10'+(Lang2=="IT"?' bg-blue-500/10 ':'')}>
               <a className='dark:text-orange-700 text-blue-700'>Italienisch</a>
               <a>ITALIENISCH (IT)</a>
             </span>
